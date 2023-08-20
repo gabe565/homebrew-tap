@@ -5,13 +5,13 @@
 class Castsponsorskip < Formula
   desc "Skip sponsored YouTube content on all local Google Cast devices"
   homepage "https://github.com/gabe565/CastSponsorSkip"
-  version "0.0.2"
+  version "0.1.0"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.0.2/castsponsorskip_0.0.2_darwin_amd64.tar.gz"
-      sha256 "f17558578a2a7aed48ee7085956c3836761b99a22f6dbad5560e5176bfb5974e"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.1.0/castsponsorskip_0.1.0_darwin_amd64.tar.gz"
+      sha256 "b45cdf6a28aef33ac7e6404ab4328b2080041f008f2983af2d2253f9daecf386"
 
       def install
         bin.install "castsponsorskip"
@@ -22,8 +22,8 @@ class Castsponsorskip < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.0.2/castsponsorskip_0.0.2_darwin_arm64.tar.gz"
-      sha256 "bbe70ef6f7fbc5b08366d7f5faeb942453077e015bded61e9cec384482c6f155"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.1.0/castsponsorskip_0.1.0_darwin_arm64.tar.gz"
+      sha256 "85cbb418c35737e33e693beff25de1014d2f8f59d7cf3b72fbc78a81824bbff2"
 
       def install
         bin.install "castsponsorskip"
@@ -37,8 +37,8 @@ class Castsponsorskip < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.0.2/castsponsorskip_0.0.2_linux_arm64.tar.gz"
-      sha256 "4442bb2cf94ca222c6933e1429b458006ed50f82bd9b7c2effb78ea3f4649c57"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.1.0/castsponsorskip_0.1.0_linux_arm64.tar.gz"
+      sha256 "fdafb6f77982962eedb3c869349c4e6246f1850cdc70a981dcc7b8a682d9e6b9"
 
       def install
         bin.install "castsponsorskip"
@@ -49,8 +49,8 @@ class Castsponsorskip < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.0.2/castsponsorskip_0.0.2_linux_amd64.tar.gz"
-      sha256 "30107b5b121eef5de10de82e4ee90fe3908e4b3a5c73c2ca99e798b6a8b0355e"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.1.0/castsponsorskip_0.1.0_linux_amd64.tar.gz"
+      sha256 "61a022ca0b6436434752bbf6061babf15d8572748ebe9eab7db275e21a2e094f"
 
       def install
         bin.install "castsponsorskip"
