@@ -5,13 +5,13 @@
 class Castsponsorskip < Formula
   desc "Skip sponsored YouTube content on all local Google Cast devices"
   homepage "https://github.com/gabe565/CastSponsorSkip"
-  version "0.3.3"
+  version "0.3.4"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.3/castsponsorskip_0.3.3_darwin_amd64.tar.gz"
-      sha256 "88626ca3702c9735e5850c0392405f13f5635ac8234659da57fac5226f32efc1"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.4/castsponsorskip_0.3.4_darwin_amd64.tar.gz"
+      sha256 "39b0a7e7a43b32a09e00faa449807c77e45aca0ceb29d25a732ad1dcc6d2fd67"
 
       def install
         bin.install "castsponsorskip"
@@ -22,8 +22,8 @@ class Castsponsorskip < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.3/castsponsorskip_0.3.3_darwin_arm64.tar.gz"
-      sha256 "9ed25a525f79f3a17b5b4b03dbc5aeca5f966ddbdcc76e85972c56d733bef08c"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.4/castsponsorskip_0.3.4_darwin_arm64.tar.gz"
+      sha256 "ccef8ce05fd98685ff84f89912e26f150d84ea278fa1f0a1398e663ab9814352"
 
       def install
         bin.install "castsponsorskip"
@@ -36,9 +36,21 @@ class Castsponsorskip < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.4/castsponsorskip_0.3.4_linux_armv6.tar.gz"
+      sha256 "760cf820de205794ceb8aedb82bd1685c64d213c0a5736ae16aa7c33fa4b307d"
+
+      def install
+        bin.install "castsponsorskip"
+        man1.install "manpages/castsponsorskip.1.gz"
+        bash_completion.install "completions/castsponsorskip.bash" => "castsponsorskip"
+        zsh_completion.install "completions/castsponsorskip.zsh" => "_castsponsorskip"
+        fish_completion.install "completions/castsponsorskip.fish"
+      end
+    end
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.3/castsponsorskip_0.3.3_linux_amd64.tar.gz"
-      sha256 "b22d59a78952d89f0f09fc6d8151bd844ef874e971fbf696a689f2846c7c6f05"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.4/castsponsorskip_0.3.4_linux_amd64.tar.gz"
+      sha256 "6e3861525419a2fd406f3893b8f055702a9c9451f125774330718c82625ae753"
 
       def install
         bin.install "castsponsorskip"
@@ -49,20 +61,8 @@ class Castsponsorskip < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.3/castsponsorskip_0.3.3_linux_arm64.tar.gz"
-      sha256 "9c1c9889d55179f710e4c243f528c11257b9cf15874c5c407a39b5ee26c042a6"
-
-      def install
-        bin.install "castsponsorskip"
-        man1.install "manpages/castsponsorskip.1.gz"
-        bash_completion.install "completions/castsponsorskip.bash" => "castsponsorskip"
-        zsh_completion.install "completions/castsponsorskip.zsh" => "_castsponsorskip"
-        fish_completion.install "completions/castsponsorskip.fish"
-      end
-    end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.3/castsponsorskip_0.3.3_linux_armv6.tar.gz"
-      sha256 "dc58cc2adb11179d0242933775df33a850ba30faf80769bc1ee3202569693f81"
+      url "https://github.com/gabe565/CastSponsorSkip/releases/download/v0.3.4/castsponsorskip_0.3.4_linux_arm64.tar.gz"
+      sha256 "c98a4b3e7838365dff843ab1a6441621c3db00d1d03852056b055d446e184d55"
 
       def install
         bin.install "castsponsorskip"
