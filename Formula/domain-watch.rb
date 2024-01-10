@@ -5,13 +5,13 @@
 class DomainWatch < Formula
   desc "Get notified about domain changes as they happen"
   homepage "https://github.com/gabe565/domain-watch"
-  version "0.1.0"
+  version "0.1.1"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.0/domain-watch_0.1.0_darwin_arm64.tar.gz"
-      sha256 "860a158c51e31cf4a0cceaf5c00cc143ca02e6ac7f49d3b5e54fd6f5c552c927"
+      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_darwin_arm64.tar.gz"
+      sha256 "e97c8b66a622feb0626e6bb42668674b55b8aaced2d443a4df885686d4a4f6eb"
 
       def install
         bin.install "domain-watch"
@@ -22,8 +22,8 @@ class DomainWatch < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.0/domain-watch_0.1.0_darwin_amd64.tar.gz"
-      sha256 "8e93a06027f33925b23520c94267e71a7376ff8aa795db5b8dda616eb37d22f9"
+      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_darwin_amd64.tar.gz"
+      sha256 "90f5119c2ef53d0efc3f452a20b6137cfe85c722ae78ba9de2bea711fab83a45"
 
       def install
         bin.install "domain-watch"
@@ -37,8 +37,8 @@ class DomainWatch < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.0/domain-watch_0.1.0_linux_arm64.tar.gz"
-      sha256 "f0a9940be6d06a9003bb78641d0a943ecd7036cdc42cc81f79a91108ccaa7254"
+      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_linux_arm64.tar.gz"
+      sha256 "dd3d74c84000963133ebb6df403d49f7cba7bf34cef9bd7b6d9aaff2b3b4e3a9"
 
       def install
         bin.install "domain-watch"
@@ -49,8 +49,8 @@ class DomainWatch < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.0/domain-watch_0.1.0_linux_amd64.tar.gz"
-      sha256 "f0bc490f67a946408bef34c86c7d960f39fa8ef5aa09bd6870a1c280e9586f3b"
+      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_linux_amd64.tar.gz"
+      sha256 "80c198f141063bc7cc7773d91d1af29fa5fe846244aa6f4ddcc0af601f8600d8"
 
       def install
         bin.install "domain-watch"
@@ -61,8 +61,8 @@ class DomainWatch < Formula
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.0/domain-watch_0.1.0_linux_armv6.tar.gz"
-      sha256 "63f9a6caa176147155a987ede5d2ed1c76bb7294c622783bc254f74c88716c73"
+      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_linux_armv6.tar.gz"
+      sha256 "47f59c63d0c709596ae1a5c05a503021a25432fd8420cdf7284a6b7b48ae7e0b"
 
       def install
         bin.install "domain-watch"
