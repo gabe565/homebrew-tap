@@ -5,13 +5,13 @@
 class PwgenGo < Formula
   desc "Command line passphrase generator written in Go"
   homepage "https://github.com/gabe565/pwgen-go"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.2.0/pwgen-go_0.2.0_darwin_amd64.tar.gz"
-      sha256 "4800a588a6c88b3ee1be76279f63a13bca92e6be10b9f5b26657910e0c0c0fda"
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.3.0/pwgen-go_0.3.0_darwin_amd64.tar.gz"
+      sha256 "a293fba1cb772b1353aa0da1e892087687d16e1ebfda0dd280918b99d85ce58c"
 
       def install
         bin.install "pwgen"
@@ -22,8 +22,8 @@ class PwgenGo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.2.0/pwgen-go_0.2.0_darwin_arm64.tar.gz"
-      sha256 "cc66b32bf82ff0b3452ae6e434bfa6437a37e82d62482cd49401bd1eace76fb6"
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.3.0/pwgen-go_0.3.0_darwin_arm64.tar.gz"
+      sha256 "8a03fcda044ec9d25f891aac7b328a16731984c7fb117f170f5ec6f4e1cbfb8a"
 
       def install
         bin.install "pwgen"
@@ -37,8 +37,8 @@ class PwgenGo < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.2.0/pwgen-go_0.2.0_linux_amd64.tar.gz"
-      sha256 "fb177e85ac507914a0afff04dc2eaadcbad2195b7b46d831a8e6e1dd1ca68780"
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.3.0/pwgen-go_0.3.0_linux_amd64.tar.gz"
+      sha256 "4a9bf3fd05cc92f78490eb74227173f35112f63b8c344ae8f448d90198df2dba"
 
       def install
         bin.install "pwgen"
@@ -49,8 +49,8 @@ class PwgenGo < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.2.0/pwgen-go_0.2.0_linux_arm64.tar.gz"
-      sha256 "5ac98ef402316a5f41e5226a8201cb241a32c4aa2e001bead14901576f889167"
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.3.0/pwgen-go_0.3.0_linux_arm64.tar.gz"
+      sha256 "0dcd7e940350b3246780ecd36982e42f9ae09a50978489da6a8e2fcb1dad870d"
 
       def install
         bin.install "pwgen"
