@@ -5,13 +5,13 @@
 class AsciiMovie < Formula
   desc "Star Wars SSH + Telnet server written in Go"
   homepage "https://github.com/gabe565/ascii-movie"
-  version "1.9.0"
+  version "1.9.1"
   license "GPL-3.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.0/ascii-movie_1.9.0_darwin_amd64.tar.gz"
-      sha256 "d63878c8ef2be81e3667d83935625f277d38e5f003249b387667f2c497ea0aaf"
+    on_intel do
+      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.1/ascii-movie_1.9.1_darwin_amd64.tar.gz"
+      sha256 "fbaa2e69622e51769666e7b2dccbc9b1894551db76465494f45a949d589aa9ee"
 
       def install
         bin.install "ascii-movie"
@@ -26,9 +26,9 @@ class AsciiMovie < Formula
         fish_completion.install "completions/ascii-movie.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.0/ascii-movie_1.9.0_darwin_arm64.tar.gz"
-      sha256 "4d636bd1f5797c15cdaa1f09cb80e931fd2354bd06d598bbcba29a816262a887"
+    on_arm do
+      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.1/ascii-movie_1.9.1_darwin_arm64.tar.gz"
+      sha256 "449fa7381593fbc3dd9c0b6f0670108b423d7ebbafab314cad546194c40dc8a8"
 
       def install
         bin.install "ascii-movie"
@@ -46,38 +46,42 @@ class AsciiMovie < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.0/ascii-movie_1.9.0_linux_amd64.tar.gz"
-      sha256 "5da8017138f43eafabafaecccbf3b5f491de15bdaf075cace4352409deb3579e"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.1/ascii-movie_1.9.1_linux_amd64.tar.gz"
+        sha256 "9ce8ea455d3a40a531fcd06f4489d8d3808f9d9a0f5448f908bac11e9e913b52"
 
-      def install
-        bin.install "ascii-movie"
-        man1.install "manpages/ascii-movie.1.gz"
-        man1.install "manpages/ascii-movie-get.1.gz"
-        man1.install "manpages/ascii-movie-get-stream.1.gz"
-        man1.install "manpages/ascii-movie-ls.1.gz"
-        man1.install "manpages/ascii-movie-play.1.gz"
-        man1.install "manpages/ascii-movie-serve.1.gz"
-        bash_completion.install "completions/ascii-movie.bash" => "ascii-movie"
-        zsh_completion.install "completions/ascii-movie.zsh" => "_ascii-movie"
-        fish_completion.install "completions/ascii-movie.fish"
+        def install
+          bin.install "ascii-movie"
+          man1.install "manpages/ascii-movie.1.gz"
+          man1.install "manpages/ascii-movie-get.1.gz"
+          man1.install "manpages/ascii-movie-get-stream.1.gz"
+          man1.install "manpages/ascii-movie-ls.1.gz"
+          man1.install "manpages/ascii-movie-play.1.gz"
+          man1.install "manpages/ascii-movie-serve.1.gz"
+          bash_completion.install "completions/ascii-movie.bash" => "ascii-movie"
+          zsh_completion.install "completions/ascii-movie.zsh" => "_ascii-movie"
+          fish_completion.install "completions/ascii-movie.fish"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.0/ascii-movie_1.9.0_linux_arm64.tar.gz"
-      sha256 "188816a55e5de2299d67040cd0207d16e41c37f8f5ec0d1cd3bb42bb37f2741d"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.1/ascii-movie_1.9.1_linux_arm64.tar.gz"
+        sha256 "31b41e808bc997e25f834f0972b6732eb8279ad01fd04563b20610a51a48138b"
 
-      def install
-        bin.install "ascii-movie"
-        man1.install "manpages/ascii-movie.1.gz"
-        man1.install "manpages/ascii-movie-get.1.gz"
-        man1.install "manpages/ascii-movie-get-stream.1.gz"
-        man1.install "manpages/ascii-movie-ls.1.gz"
-        man1.install "manpages/ascii-movie-play.1.gz"
-        man1.install "manpages/ascii-movie-serve.1.gz"
-        bash_completion.install "completions/ascii-movie.bash" => "ascii-movie"
-        zsh_completion.install "completions/ascii-movie.zsh" => "_ascii-movie"
-        fish_completion.install "completions/ascii-movie.fish"
+        def install
+          bin.install "ascii-movie"
+          man1.install "manpages/ascii-movie.1.gz"
+          man1.install "manpages/ascii-movie-get.1.gz"
+          man1.install "manpages/ascii-movie-get-stream.1.gz"
+          man1.install "manpages/ascii-movie-ls.1.gz"
+          man1.install "manpages/ascii-movie-play.1.gz"
+          man1.install "manpages/ascii-movie-serve.1.gz"
+          bash_completion.install "completions/ascii-movie.bash" => "ascii-movie"
+          zsh_completion.install "completions/ascii-movie.zsh" => "_ascii-movie"
+          fish_completion.install "completions/ascii-movie.fish"
+        end
       end
     end
   end
