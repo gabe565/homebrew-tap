@@ -5,13 +5,13 @@
 class ChangelogGenerator < Formula
   desc "Generates a changelog from commits since the previous release."
   homepage "https://github.com/gabe565/changelog-generator"
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/gabe565/changelog-generator/releases/download/v1.0.0/changelog-generator_1.0.0_darwin_amd64.tar.gz"
-      sha256 "e3c4fc6282279c90ba293e976da755ad9526036b0183bec8da5669f1eff7f69c"
+    on_intel do
+      url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.0/changelog-generator_1.1.0_darwin_amd64.tar.gz"
+      sha256 "43cac3e25a87ee23d9d80587b0593115c24a5cc32611bc2a41e392a0f7ad31da"
 
       def install
         bin.install "changelog-generator"
@@ -21,9 +21,9 @@ class ChangelogGenerator < Formula
         fish_completion.install "completions/changelog-generator.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/gabe565/changelog-generator/releases/download/v1.0.0/changelog-generator_1.0.0_darwin_arm64.tar.gz"
-      sha256 "048112fcbb5e530452c5e4b66eeeb723351ac2180604e2602dad2fd2e79452b3"
+    on_arm do
+      url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.0/changelog-generator_1.1.0_darwin_arm64.tar.gz"
+      sha256 "2a07366ed36eda9cd31b157b80aaa3d2b59b4fc4c963a296c673fbcb22b4ed56"
 
       def install
         bin.install "changelog-generator"
@@ -36,28 +36,32 @@ class ChangelogGenerator < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/gabe565/changelog-generator/releases/download/v1.0.0/changelog-generator_1.0.0_linux_amd64.tar.gz"
-      sha256 "f0cfa337102ce338da2f4cf7f8c9286f8c2d45e76daae403640ddf29dea8ad7a"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.0/changelog-generator_1.1.0_linux_amd64.tar.gz"
+        sha256 "75ed75cb7b23e654306d8f5ff91378bc8fa27d40bf86cb7f00cb0e0695c9c648"
 
-      def install
-        bin.install "changelog-generator"
-        man1.install "manpages/changelog-generator.1.gz"
-        bash_completion.install "completions/changelog-generator.bash" => "changelog-generator"
-        zsh_completion.install "completions/changelog-generator.zsh" => "_changelog-generator"
-        fish_completion.install "completions/changelog-generator.fish"
+        def install
+          bin.install "changelog-generator"
+          man1.install "manpages/changelog-generator.1.gz"
+          bash_completion.install "completions/changelog-generator.bash" => "changelog-generator"
+          zsh_completion.install "completions/changelog-generator.zsh" => "_changelog-generator"
+          fish_completion.install "completions/changelog-generator.fish"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/changelog-generator/releases/download/v1.0.0/changelog-generator_1.0.0_linux_arm64.tar.gz"
-      sha256 "2ab9570dbde4e422f3f95541e50b40eabe4d6cb67df8a4fae095d921e0965839"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.0/changelog-generator_1.1.0_linux_arm64.tar.gz"
+        sha256 "3ca0546c7eece44dfde5ff2f8b0197a8ea63274fcbba5defbf240daf51959596"
 
-      def install
-        bin.install "changelog-generator"
-        man1.install "manpages/changelog-generator.1.gz"
-        bash_completion.install "completions/changelog-generator.bash" => "changelog-generator"
-        zsh_completion.install "completions/changelog-generator.zsh" => "_changelog-generator"
-        fish_completion.install "completions/changelog-generator.fish"
+        def install
+          bin.install "changelog-generator"
+          man1.install "manpages/changelog-generator.1.gz"
+          bash_completion.install "completions/changelog-generator.bash" => "changelog-generator"
+          zsh_completion.install "completions/changelog-generator.zsh" => "_changelog-generator"
+          fish_completion.install "completions/changelog-generator.fish"
+        end
       end
     end
   end
