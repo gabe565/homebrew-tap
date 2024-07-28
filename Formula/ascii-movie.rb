@@ -5,13 +5,13 @@
 class AsciiMovie < Formula
   desc "Star Wars SSH + Telnet server written in Go"
   homepage "https://github.com/gabe565/ascii-movie"
-  version "1.9.3"
+  version "1.9.4"
   license "GPL-3.0"
 
   on_macos do
     on_intel do
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.3/ascii-movie_1.9.3_darwin_amd64.tar.gz"
-      sha256 "827317b45bcfc8cde460bafb1ba42bce6de55aac298a9fb9d437b19a9d355f32"
+      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.4/ascii-movie_1.9.4_darwin_amd64.tar.gz"
+      sha256 "a26449012b352681545c4f0745108a35c6de0ca5949c096f5bc55aece15b0c65"
 
       def install
         bin.install "ascii-movie"
@@ -27,8 +27,8 @@ class AsciiMovie < Formula
       end
     end
     on_arm do
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.3/ascii-movie_1.9.3_darwin_arm64.tar.gz"
-      sha256 "50fd109c6b075198a4c44700d22943c3da893df86ca2fc327c943d765c2e9cc4"
+      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.4/ascii-movie_1.9.4_darwin_arm64.tar.gz"
+      sha256 "92972577217881db9e75ff5fe4a31710a87151bb54acfebc788241a37c25278e"
 
       def install
         bin.install "ascii-movie"
@@ -48,8 +48,8 @@ class AsciiMovie < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.3/ascii-movie_1.9.3_linux_amd64.tar.gz"
-        sha256 "3ba8af27dbaa1b94fc8f8302d37906c0cf6f63888e6c2524a7411cb91aedd073"
+        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.4/ascii-movie_1.9.4_linux_amd64.tar.gz"
+        sha256 "8b1e7c36bfd9d3918edadc9315e64d34cb6ec60e6f56410708ba9631697ec6f8"
 
         def install
           bin.install "ascii-movie"
@@ -67,8 +67,8 @@ class AsciiMovie < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.3/ascii-movie_1.9.3_linux_arm64.tar.gz"
-        sha256 "38728b0acf9ce96206155109a6f57d48301fce05585a008cc2dfcfa498e405d9"
+        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.4/ascii-movie_1.9.4_linux_arm64.tar.gz"
+        sha256 "df7040027ffd7556b4f3a87437f227f3452297851c0a54adf7b579c73d88b160"
 
         def install
           bin.install "ascii-movie"
