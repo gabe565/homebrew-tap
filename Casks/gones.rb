@@ -1,10 +1,10 @@
 cask "gones" do
   desc "An NES emulator written in Go."
   homepage "https://github.com/gabe565/gones"
-  version "0.0.3"
+  version "0.1.0"
 
-  url "https://github.com/gabe565/gones/releases/download/v0.0.3/gones_darwin.tar.gz"
-  sha256 "507a091142b96780b3423e5017d7d694281550d5108e2e99001cb0531ab569c8"
+  url "https://github.com/gabe565/gones/releases/download/v0.1.0/gones_darwin.tar.gz"
+  sha256 "e75dca5ca0314439d15369efa41cdb6c9740b8c913951485b2f18343b867cdbc"
 
   app "GoNES.app"
 end
