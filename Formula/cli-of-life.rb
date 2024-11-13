@@ -5,13 +5,13 @@
 class CliOfLife < Formula
   desc "Play Conways Game of Life in your terminal"
   homepage "https://github.com/gabe565/cli-of-life"
-  version "0.4.1"
+  version "0.4.2"
   license "Apache2"
 
   on_macos do
     on_intel do
-      url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.1/cli-of-life_0.4.1_darwin_amd64.tar.gz"
-      sha256 "eb88fe05fae082a5251d02e9e9c4ee7d03397e9f8cbb6d75f8e852c33dd64005"
+      url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.2/cli-of-life_0.4.2_darwin_amd64.tar.gz"
+      sha256 "8b457a806a447e317bf9592dd5666087c84790c89dcdd3ee7ed2545dd60e5d24"
 
       def install
         bin.install "cli-of-life"
@@ -22,8 +22,8 @@ class CliOfLife < Formula
       end
     end
     on_arm do
-      url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.1/cli-of-life_0.4.1_darwin_arm64.tar.gz"
-      sha256 "d0085556084c55e989ffbb0e3eed80aab10d66153e5be87b980fa90d3f48967c"
+      url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.2/cli-of-life_0.4.2_darwin_arm64.tar.gz"
+      sha256 "27ea642700ce54e2106c52dd203e6a70133d5f6810da1d1e44ffdb9ea34bdaa3"
 
       def install
         bin.install "cli-of-life"
@@ -38,8 +38,8 @@ class CliOfLife < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.1/cli-of-life_0.4.1_linux_amd64.tar.gz"
-        sha256 "a6262fc2be566fc42797dfa9623ea5001f4f5ee5e4b62de410d331835f877b14"
+        url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.2/cli-of-life_0.4.2_linux_amd64.tar.gz"
+        sha256 "af9244f5cfd70dd0ca2b57b04da1e76b1a8afbdb3918c3341f8b97cd60fe0574"
 
         def install
           bin.install "cli-of-life"
@@ -52,8 +52,8 @@ class CliOfLife < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.1/cli-of-life_0.4.1_linux_arm64.tar.gz"
-        sha256 "08100664d75044a2cfc5bb8df0999932528da41cda29bd192ccedc62a35124eb"
+        url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.2/cli-of-life_0.4.2_linux_arm64.tar.gz"
+        sha256 "0afb3576262f589b7c02f6a36e0aee2247245bdf97733f27ff2526b6ade0483e"
 
         def install
           bin.install "cli-of-life"
