@@ -5,13 +5,13 @@
 class ChangelogGenerator < Formula
   desc "Generates a changelog from commits since the previous release."
   homepage "https://github.com/gabe565/changelog-generator"
-  version "1.1.1"
+  version "1.1.2"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.1/changelog-generator_1.1.1_darwin_amd64.tar.gz"
-      sha256 "cce400217d6d918e3930633b93ed1dba4705fc78389e933ee08617c77d85e733"
+      url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.2/changelog-generator_1.1.2_darwin_amd64.tar.gz"
+      sha256 "4cce3cf22a409da1f6b05276b617b5005ed40a486b4c53cb12ed1dca1f836b55"
 
       def install
         bin.install "changelog-generator"
@@ -22,8 +22,8 @@ class ChangelogGenerator < Formula
       end
     end
     on_arm do
-      url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.1/changelog-generator_1.1.1_darwin_arm64.tar.gz"
-      sha256 "9cdf7269d5458e3a594f773392f226ce9559fdf82074f40f958083144aaf04af"
+      url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.2/changelog-generator_1.1.2_darwin_arm64.tar.gz"
+      sha256 "1fa3f183ee682c71b771a6c18c3a15dd5d5f5abc1bbe4ea228afe2b5985d32f1"
 
       def install
         bin.install "changelog-generator"
@@ -38,8 +38,8 @@ class ChangelogGenerator < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.1/changelog-generator_1.1.1_linux_amd64.tar.gz"
-        sha256 "3a77d58f7a2409f82cae5dedeec3d36e4bc44c9130923094f8cc2cee258671b8"
+        url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.2/changelog-generator_1.1.2_linux_amd64.tar.gz"
+        sha256 "58f1d033f188f32d5faa879f00871ff9f741aa02337df320296aa453856a62ad"
 
         def install
           bin.install "changelog-generator"
@@ -52,8 +52,8 @@ class ChangelogGenerator < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.1/changelog-generator_1.1.1_linux_arm64.tar.gz"
-        sha256 "3f4caac1955fdf36c5c03bbb62c0ecc1cb1de5071cfc2359e96f8247decdff78"
+        url "https://github.com/gabe565/changelog-generator/releases/download/v1.1.2/changelog-generator_1.1.2_linux_arm64.tar.gz"
+        sha256 "156a3b03c947ec14532b4592aa70e6e2474ce33b74af8d07af972ab0d99ad6eb"
 
         def install
           bin.install "changelog-generator"
