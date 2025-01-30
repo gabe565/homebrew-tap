@@ -5,13 +5,13 @@
 class SubcablemapDl < Formula
   desc "Download full-resolution versions of Telegeography Submarine Cable Maps"
   homepage "https://github.com/gabe565/subcablemap-dl"
-  version "0.4.0"
+  version "0.4.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.0/subcablemap-dl_0.4.0_darwin_amd64.tar.gz"
-      sha256 "6631d793c7de0672247b9bc72916d66c380e7cfa4b291595d799142dac06a821"
+      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.1/subcablemap-dl_0.4.1_darwin_amd64.tar.gz"
+      sha256 "d3476779733f95fc2e7eb2d7eec3c027f4f1e83bfe9ee450d730a30be074cb28"
 
       def install
         bin.install "subcablemap-dl"
@@ -22,8 +22,8 @@ class SubcablemapDl < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.0/subcablemap-dl_0.4.0_darwin_arm64.tar.gz"
-      sha256 "36473e16971eb08a1c5aaf020208ecd7ea17b310cf6238c1cfd33741a1210f50"
+      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.1/subcablemap-dl_0.4.1_darwin_arm64.tar.gz"
+      sha256 "7edc81f704b1e36e8b76ae825aa8c008e01eaada04012dcbb47dcb96040706f9"
 
       def install
         bin.install "subcablemap-dl"
@@ -38,8 +38,8 @@ class SubcablemapDl < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.0/subcablemap-dl_0.4.0_linux_amd64.tar.gz"
-        sha256 "bce8587f9b9ab8cd46d75e99e7c44b9f45a2b4dd149ff114abdaf12588285eb6"
+        url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.1/subcablemap-dl_0.4.1_linux_amd64.tar.gz"
+        sha256 "4e656c26625c38c23eb52383ca0e6542453db3a6bf5729ca8704d5c0aaa21457"
 
         def install
           bin.install "subcablemap-dl"
@@ -52,8 +52,8 @@ class SubcablemapDl < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.0/subcablemap-dl_0.4.0_linux_arm64.tar.gz"
-        sha256 "a7704741d6e8455fc1351143ede319b8044e07409e8f458382dc8a1899687f97"
+        url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.1/subcablemap-dl_0.4.1_linux_arm64.tar.gz"
+        sha256 "86db1b4b5a6cb53d6513ae4bed91b25c14c153c419849185eab180b02a195cbb"
 
         def install
           bin.install "subcablemap-dl"
