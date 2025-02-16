@@ -5,13 +5,13 @@
 class DomainWatch < Formula
   desc "Get notified about domain changes as they happen"
   homepage "https://github.com/gabe565/domain-watch"
-  version "0.1.1"
+  version "0.2.0"
   license "GPL-3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_darwin_arm64.tar.gz"
-      sha256 "e97c8b66a622feb0626e6bb42668674b55b8aaced2d443a4df885686d4a4f6eb"
+    if Hardware::CPU.intel?
+      url "https://github.com/gabe565/domain-watch/releases/download/v0.2.0/domain-watch_0.2.0_darwin_amd64.tar.gz"
+      sha256 "6284ad3247fd0f3bb663b21fad59310282b560af75a14f8c524224bbbdd1b296"
 
       def install
         bin.install "domain-watch"
@@ -21,9 +21,9 @@ class DomainWatch < Formula
         fish_completion.install "completions/domain-watch.fish"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_darwin_amd64.tar.gz"
-      sha256 "90f5119c2ef53d0efc3f452a20b6137cfe85c722ae78ba9de2bea711fab83a45"
+    if Hardware::CPU.arm?
+      url "https://github.com/gabe565/domain-watch/releases/download/v0.2.0/domain-watch_0.2.0_darwin_arm64.tar.gz"
+      sha256 "241d88a5004f54960c51ddd8a868bcdbddb758b7da39687459ca8de137ba48e3"
 
       def install
         bin.install "domain-watch"
@@ -36,40 +36,46 @@ class DomainWatch < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_linux_arm64.tar.gz"
-      sha256 "dd3d74c84000963133ebb6df403d49f7cba7bf34cef9bd7b6d9aaff2b3b4e3a9"
-
-      def install
-        bin.install "domain-watch"
-        man1.install "manpages/domain-watch.1.gz"
-        bash_completion.install "completions/domain-watch.bash" => "domain-watch"
-        zsh_completion.install "completions/domain-watch.zsh" => "_domain-watch"
-        fish_completion.install "completions/domain-watch.fish"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_linux_amd64.tar.gz"
-      sha256 "80c198f141063bc7cc7773d91d1af29fa5fe846244aa6f4ddcc0af601f8600d8"
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gabe565/domain-watch/releases/download/v0.2.0/domain-watch_0.2.0_linux_amd64.tar.gz"
+        sha256 "cb8bdb4694f9bd6b6b7d8a2339643845802c6b07f33c76af4cb0f7b72989b7a1"
 
-      def install
-        bin.install "domain-watch"
-        man1.install "manpages/domain-watch.1.gz"
-        bash_completion.install "completions/domain-watch.bash" => "domain-watch"
-        zsh_completion.install "completions/domain-watch.zsh" => "_domain-watch"
-        fish_completion.install "completions/domain-watch.fish"
+        def install
+          bin.install "domain-watch"
+          man1.install "manpages/domain-watch.1.gz"
+          bash_completion.install "completions/domain-watch.bash" => "domain-watch"
+          zsh_completion.install "completions/domain-watch.zsh" => "_domain-watch"
+          fish_completion.install "completions/domain-watch.fish"
+        end
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/domain-watch/releases/download/v0.1.1/domain-watch_0.1.1_linux_armv6.tar.gz"
-      sha256 "47f59c63d0c709596ae1a5c05a503021a25432fd8420cdf7284a6b7b48ae7e0b"
+    if Hardware::CPU.arm?
+      if !Hardware::CPU.is_64_bit?
+        url "https://github.com/gabe565/domain-watch/releases/download/v0.2.0/domain-watch_0.2.0_linux_armv6.tar.gz"
+        sha256 "fb4c37f53f2285da613ad156e3d268620c35045dfdccba7ec31da5f0cf8d1dff"
 
-      def install
-        bin.install "domain-watch"
-        man1.install "manpages/domain-watch.1.gz"
-        bash_completion.install "completions/domain-watch.bash" => "domain-watch"
-        zsh_completion.install "completions/domain-watch.zsh" => "_domain-watch"
-        fish_completion.install "completions/domain-watch.fish"
+        def install
+          bin.install "domain-watch"
+          man1.install "manpages/domain-watch.1.gz"
+          bash_completion.install "completions/domain-watch.bash" => "domain-watch"
+          zsh_completion.install "completions/domain-watch.zsh" => "_domain-watch"
+          fish_completion.install "completions/domain-watch.fish"
+        end
+      end
+    end
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/gabe565/domain-watch/releases/download/v0.2.0/domain-watch_0.2.0_linux_arm64.tar.gz"
+        sha256 "a97becaaf02cb989614d0ede1f00d27d0351db63c4a536a0e0aa26efb531d2d9"
+
+        def install
+          bin.install "domain-watch"
+          man1.install "manpages/domain-watch.1.gz"
+          bash_completion.install "completions/domain-watch.bash" => "domain-watch"
+          zsh_completion.install "completions/domain-watch.zsh" => "_domain-watch"
+          fish_completion.install "completions/domain-watch.fish"
+        end
       end
     end
   end
