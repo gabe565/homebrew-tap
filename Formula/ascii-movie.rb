@@ -5,13 +5,13 @@
 class AsciiMovie < Formula
   desc "Star Wars SSH + Telnet server written in Go"
   homepage "https://github.com/gabe565/ascii-movie"
-  version "1.9.5"
+  version "1.9.6"
   license "GPL-3.0"
 
   on_macos do
-    on_intel do
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.5/ascii-movie_1.9.5_darwin_amd64.tar.gz"
-      sha256 "5024009f0b017f3e2a9a4cf9539cb10824973c387daefc2dc1ee6972e8a500e1"
+    if Hardware::CPU.intel?
+      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.6/ascii-movie_1.9.6_darwin_amd64.tar.gz"
+      sha256 "b1f2950ee9cb262c03353e821a97989238d719a4a76180768c6e818be4f354f6"
 
       def install
         bin.install "ascii-movie"
@@ -26,9 +26,9 @@ class AsciiMovie < Formula
         fish_completion.install "completions/ascii-movie.fish"
       end
     end
-    on_arm do
-      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.5/ascii-movie_1.9.5_darwin_arm64.tar.gz"
-      sha256 "f0ff40b703c41f68a48b4356062f9956d83e853a0924adb543f98c72e216dc8f"
+    if Hardware::CPU.arm?
+      url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.6/ascii-movie_1.9.6_darwin_arm64.tar.gz"
+      sha256 "fff1332603fe74c97854a4a8e4a188b3a0cc6916fc89ffced77b3d6dfec01ab6"
 
       def install
         bin.install "ascii-movie"
@@ -46,10 +46,10 @@ class AsciiMovie < Formula
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.5/ascii-movie_1.9.5_linux_amd64.tar.gz"
-        sha256 "e2ce985b06b0229c975bb02f66c5b9547f0027f8add75baef8c07dd7c7cb2084"
+        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.6/ascii-movie_1.9.6_linux_amd64.tar.gz"
+        sha256 "22bdd634e6c178d89814aeecf5faf14fb2832716467ff47ddf0c9a8dee055df6"
 
         def install
           bin.install "ascii-movie"
@@ -65,10 +65,10 @@ class AsciiMovie < Formula
         end
       end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.5/ascii-movie_1.9.5_linux_arm64.tar.gz"
-        sha256 "a27c98cd0bf8499f566c497355eb25921d6e5a2a9b63d191ca9863766a44def8"
+        url "https://github.com/gabe565/ascii-movie/releases/download/v1.9.6/ascii-movie_1.9.6_linux_arm64.tar.gz"
+        sha256 "a1bea760d2b16fa1c3783408f8274e45faae34624d4bd28b444e9d91abde618d"
 
         def install
           bin.install "ascii-movie"
