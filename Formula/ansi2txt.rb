@@ -5,21 +5,21 @@
 class Ansi2txt < Formula
   desc "Convert text containing ANSI control codes into plain ASCII text."
   homepage "https://github.com/gabe565/ansi2txt"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.0/ansi2txt_0.1.0_darwin_amd64.tar.gz"
-      sha256 "f7605fee2e85f65f4234dda0654d02f3cdde58c496e1b56058861c66c81fda25"
+      url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.1/ansi2txt_0.1.1_darwin_amd64.tar.gz"
+      sha256 "b667a3fd46d5fdfe1abd6583f8dbb471344807c9603be2c03bd7db97fcec8025"
 
       def install
         bin.install "ansi2txt"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.0/ansi2txt_0.1.0_darwin_arm64.tar.gz"
-      sha256 "188b54ab907f1c70e19a38fb49894d87f50ba9352e2970ae07466eb1421b1540"
+      url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.1/ansi2txt_0.1.1_darwin_arm64.tar.gz"
+      sha256 "30a4025434bf43f880a12928fff1332a04dfab879264c2f473ccff032c9e3787"
 
       def install
         bin.install "ansi2txt"
@@ -30,8 +30,8 @@ class Ansi2txt < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.0/ansi2txt_0.1.0_linux_amd64.tar.gz"
-        sha256 "63d042dfeb8a9d33d3f007d1ec1958a8bca22577515f30adc565aa8d572d86ac"
+        url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.1/ansi2txt_0.1.1_linux_amd64.tar.gz"
+        sha256 "cdd6e5f75b6e297ba809236f95ad0fea7108a0a8ca8b2d067463d10982e40d20"
 
         def install
           bin.install "ansi2txt"
@@ -40,8 +40,8 @@ class Ansi2txt < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.0/ansi2txt_0.1.0_linux_arm64.tar.gz"
-        sha256 "22b2e16124997c91ffb90fdebc8e20ff622a11aac7fed130d81c5e46fb7cdd8b"
+        url "https://github.com/gabe565/ansi2txt/releases/download/v0.1.1/ansi2txt_0.1.1_linux_arm64.tar.gz"
+        sha256 "02239772c1b08d1fdf7ffb919f9f693cbcb58f00c697eb44c87cca75854652f1"
 
         def install
           bin.install "ansi2txt"
