@@ -5,13 +5,13 @@
 class MoreutilsGo < Formula
   desc "A Go rewrite of moreutils: A collection of the Unix tools that nobody thought to write long ago when Unix was young."
   homepage "https://github.com/gabe565/moreutils"
-  version "0.5.1"
+  version "0.5.2"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.1/moreutils-go_0.5.1_darwin_amd64.tar.gz"
-      sha256 "e1f4e33b2dfa284adc20866cca96d89203e42d1ee1cf761e895216429f990000"
+      url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_darwin_amd64.tar.gz"
+      sha256 "87a64e94301ed36d0e655f6d634fa75fa658b2a70a90840d23e6f470b3c14087"
 
       def install
         bin.install "moreutils"
@@ -25,8 +25,8 @@ class MoreutilsGo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.1/moreutils-go_0.5.1_darwin_arm64.tar.gz"
-      sha256 "42285c15eca292dce6b2c535b7d0c2668e6353ac36009d1246438a1272f6aa70"
+      url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_darwin_arm64.tar.gz"
+      sha256 "0319c83d1452626cf3de431859317fb90578e947fbfe75e989911d6b630a26eb"
 
       def install
         bin.install "moreutils"
@@ -44,8 +44,8 @@ class MoreutilsGo < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.1/moreutils-go_0.5.1_linux_amd64.tar.gz"
-        sha256 "544526e083eb7d2242f324a678862fdff71dc7692d94abb57c5a14469deff2f8"
+        url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_linux_amd64.tar.gz"
+        sha256 "70777fe3d6450464d0ed9b49a8290a308cbb7f59d812f2c2e2a7849e308e967d"
 
         def install
           bin.install "moreutils"
@@ -61,8 +61,8 @@ class MoreutilsGo < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.1/moreutils-go_0.5.1_linux_arm64.tar.gz"
-        sha256 "91bdb693d0ac2f3dc7714e9fbb8cedd4577b2bbebec2152ae7751353fb27e751"
+        url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_linux_arm64.tar.gz"
+        sha256 "f0d9573d46698fe9c5318391ef5a0e12e97fdb3c1f23a5c4218d830bf4561e3b"
 
         def install
           bin.install "moreutils"
