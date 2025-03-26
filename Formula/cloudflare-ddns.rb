@@ -5,13 +5,13 @@
 class CloudflareDdns < Formula
   desc "Sync a Cloudflare DNS record with your current public IP address"
   homepage "https://github.com/gabe565/cloudflare-ddns"
-  version "0.0.1"
+  version "0.1.0"
   license "Apache2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.0.1/cloudflare-ddns_0.0.1_darwin_amd64.tar.gz"
-      sha256 "cf8e935217679402d4f0ae95115bffba7af824654e02f0132ce734665a9f0423"
+      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.1.0/cloudflare-ddns_0.1.0_darwin_amd64.tar.gz"
+      sha256 "b34f39fa28608bebb8dbb05804650ee8fe4004d432570051fecfe3263ea32050"
 
       def install
         bin.install "cloudflare-ddns"
@@ -22,8 +22,8 @@ class CloudflareDdns < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.0.1/cloudflare-ddns_0.0.1_darwin_arm64.tar.gz"
-      sha256 "efaeb93c6f98f3ab58a5450f966d36c5595319f26aa24783128109ba7342cf1a"
+      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.1.0/cloudflare-ddns_0.1.0_darwin_arm64.tar.gz"
+      sha256 "09ad898f64ad49179b61fd2306cc916bfcbf641d94ef3453abcdabc181e28dc7"
 
       def install
         bin.install "cloudflare-ddns"
@@ -38,8 +38,8 @@ class CloudflareDdns < Formula
   on_linux do
     if Hardware::CPU.intel?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.0.1/cloudflare-ddns_0.0.1_linux_amd64.tar.gz"
-        sha256 "0bb827e5ac8fec61ffb97262e0ed836619ce92a266957254d53d06e5bdf53fbd"
+        url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.1.0/cloudflare-ddns_0.1.0_linux_amd64.tar.gz"
+        sha256 "dbf096b201fcb7fc15d047125af0eb9a5de551358e542e3740e4f9eca9aae6da"
 
         def install
           bin.install "cloudflare-ddns"
@@ -52,8 +52,8 @@ class CloudflareDdns < Formula
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.0.1/cloudflare-ddns_0.0.1_linux_arm64.tar.gz"
-        sha256 "edf05da473c0147292de90d33b3f940d45d0cc4df8505a6a1cf16242ad281fcc"
+        url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.1.0/cloudflare-ddns_0.1.0_linux_arm64.tar.gz"
+        sha256 "d1ce789104c072625f543f677edb41b289b9a730eff6d9911e1da851789ea315"
 
         def install
           bin.install "cloudflare-ddns"
