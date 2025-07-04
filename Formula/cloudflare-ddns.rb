@@ -5,13 +5,13 @@
 class CloudflareDdns < Formula
   desc "Sync a Cloudflare DNS record with your current public IP address"
   homepage "https://github.com/gabe565/cloudflare-ddns"
-  version "0.3.0"
+  version "0.3.1"
   license "Apache2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.0/cloudflare-ddns_0.3.0_darwin_amd64.tar.gz"
-      sha256 "1cf8c6d8fced7cc65b205764bcd8cb3ef48b0bac35501fa667c3f642098602c9"
+      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.1/cloudflare-ddns_0.3.1_darwin_amd64.tar.gz"
+      sha256 "fd541836d9f1695d69de23d6ad75c95987dcb7df18c19a798b8808263a1ef38f"
 
       def install
         bin.install "cloudflare-ddns"
@@ -22,8 +22,8 @@ class CloudflareDdns < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.0/cloudflare-ddns_0.3.0_darwin_arm64.tar.gz"
-      sha256 "66fbea6b6149c2d1a98a88989989e7edb67e0be8a79eb0aa2e27a627e10c9abe"
+      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.1/cloudflare-ddns_0.3.1_darwin_arm64.tar.gz"
+      sha256 "c94f8ae0766dadfb9b8aae0a107d1ee9ae47b4ac33b716f6757128bc9b9e6c8c"
 
       def install
         bin.install "cloudflare-ddns"
@@ -36,32 +36,26 @@ class CloudflareDdns < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.0/cloudflare-ddns_0.3.0_linux_amd64.tar.gz"
-        sha256 "55be145985f003083676c7f5878add768f58011d13cdb600d7ca3f0202b8784d"
-
-        def install
-          bin.install "cloudflare-ddns"
-          man1.install "manpages/cloudflare-ddns.1.gz"
-          bash_completion.install "completions/cloudflare-ddns.bash" => "cloudflare-ddns"
-          zsh_completion.install "completions/cloudflare-ddns.zsh" => "_cloudflare-ddns"
-          fish_completion.install "completions/cloudflare-ddns.fish"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.1/cloudflare-ddns_0.3.1_linux_amd64.tar.gz"
+      sha256 "7b8acec00861abfe341e9d670a1a2dbc25549cc00621672a601946f38734d145"
+      def install
+        bin.install "cloudflare-ddns"
+        man1.install "manpages/cloudflare-ddns.1.gz"
+        bash_completion.install "completions/cloudflare-ddns.bash" => "cloudflare-ddns"
+        zsh_completion.install "completions/cloudflare-ddns.zsh" => "_cloudflare-ddns"
+        fish_completion.install "completions/cloudflare-ddns.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.0/cloudflare-ddns_0.3.0_linux_arm64.tar.gz"
-        sha256 "0a451db1ed2f3c6a49926da04f6379deffe3fbd75cfc865aad5a806da3c14df8"
-
-        def install
-          bin.install "cloudflare-ddns"
-          man1.install "manpages/cloudflare-ddns.1.gz"
-          bash_completion.install "completions/cloudflare-ddns.bash" => "cloudflare-ddns"
-          zsh_completion.install "completions/cloudflare-ddns.zsh" => "_cloudflare-ddns"
-          fish_completion.install "completions/cloudflare-ddns.fish"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/cloudflare-ddns/releases/download/v0.3.1/cloudflare-ddns_0.3.1_linux_arm64.tar.gz"
+      sha256 "f72e336854a73b45c39585ec4fadc14f1441a517d1e2b4c08ad3bad143dddffb"
+      def install
+        bin.install "cloudflare-ddns"
+        man1.install "manpages/cloudflare-ddns.1.gz"
+        bash_completion.install "completions/cloudflare-ddns.bash" => "cloudflare-ddns"
+        zsh_completion.install "completions/cloudflare-ddns.zsh" => "_cloudflare-ddns"
+        fish_completion.install "completions/cloudflare-ddns.fish"
       end
     end
   end
