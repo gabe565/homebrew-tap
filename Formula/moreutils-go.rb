@@ -5,13 +5,13 @@
 class MoreutilsGo < Formula
   desc "A Go rewrite of moreutils: A collection of the Unix tools that nobody thought to write long ago when Unix was young."
   homepage "https://github.com/gabe565/moreutils"
-  version "0.5.2"
+  version "0.6.0"
   license "GPL-3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_darwin_amd64.tar.gz"
-      sha256 "87a64e94301ed36d0e655f6d634fa75fa658b2a70a90840d23e6f470b3c14087"
+      url "https://github.com/gabe565/moreutils-go/releases/download/v0.6.0/moreutils-go_0.6.0_darwin_amd64.tar.gz"
+      sha256 "3c9299c908e94c882f707faebfb3208bbca9a0cc8ccb22732c76aed5e02132e7"
 
       def install
         bin.install "moreutils"
@@ -25,8 +25,8 @@ class MoreutilsGo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_darwin_arm64.tar.gz"
-      sha256 "0319c83d1452626cf3de431859317fb90578e947fbfe75e989911d6b630a26eb"
+      url "https://github.com/gabe565/moreutils-go/releases/download/v0.6.0/moreutils-go_0.6.0_darwin_arm64.tar.gz"
+      sha256 "fc082d39868f5dbf014b019fa2f2814bdaa880bf44a3243e11a5cda3ad95f92a"
 
       def install
         bin.install "moreutils"
@@ -42,38 +42,32 @@ class MoreutilsGo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_linux_amd64.tar.gz"
-        sha256 "70777fe3d6450464d0ed9b49a8290a308cbb7f59d812f2c2e2a7849e308e967d"
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/moreutils-go/releases/download/v0.6.0/moreutils-go_0.6.0_linux_amd64.tar.gz"
+      sha256 "bc6039f8514967b94d08e5fca1dc689a306ca57a7e1d12e716437f8d218721ed"
+      def install
+        bin.install "moreutils"
+        bin.install Dir["links/*"]
 
-        def install
-          bin.install "moreutils"
-          bin.install Dir["links/*"]
+        man1.install Dir["manpages/*"]
 
-          man1.install Dir["manpages/*"]
-
-          bash_completion.install Dir["completions/bash/*"]
-          zsh_completion.install Dir["completions/zsh/*"]
-          fish_completion.install Dir["completions/fish/*"]
-        end
+        bash_completion.install Dir["completions/bash/*"]
+        zsh_completion.install Dir["completions/zsh/*"]
+        fish_completion.install Dir["completions/fish/*"]
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/moreutils-go/releases/download/v0.5.2/moreutils-go_0.5.2_linux_arm64.tar.gz"
-        sha256 "f0d9573d46698fe9c5318391ef5a0e12e97fdb3c1f23a5c4218d830bf4561e3b"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/moreutils-go/releases/download/v0.6.0/moreutils-go_0.6.0_linux_arm64.tar.gz"
+      sha256 "e4b729e455eccbdce168e0482a0abf157007afa236dfe5ecdd6ff39eafd93491"
+      def install
+        bin.install "moreutils"
+        bin.install Dir["links/*"]
 
-        def install
-          bin.install "moreutils"
-          bin.install Dir["links/*"]
+        man1.install Dir["manpages/*"]
 
-          man1.install Dir["manpages/*"]
-
-          bash_completion.install Dir["completions/bash/*"]
-          zsh_completion.install Dir["completions/zsh/*"]
-          fish_completion.install Dir["completions/fish/*"]
-        end
+        bash_completion.install Dir["completions/bash/*"]
+        zsh_completion.install Dir["completions/zsh/*"]
+        fish_completion.install Dir["completions/fish/*"]
       end
     end
   end
