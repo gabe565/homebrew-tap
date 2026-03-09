@@ -5,15 +5,15 @@
 class SubcablemapDl < Formula
   desc "Download full-resolution versions of Telegeography Submarine Cable Maps"
   homepage "https://github.com/gabe565/subcablemap-dl"
-  version "0.4.2"
+  version "0.4.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.2/subcablemap-dl_0.4.2_darwin_amd64.tar.gz"
-      sha256 "1ac70fe01bb040cddeaf9c2d0a32520deb44227857b7b740e868d303c0a79bad"
+      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.3/subcablemap-dl_0.4.3_darwin_amd64.tar.gz"
+      sha256 "7409df72372781db993c60c9b81a84bea2de0ed899e87581d8bb05090406b369"
 
-      def install
+      define_method(:install) do
         bin.install "subcablemap-dl"
         man1.install "manpages/subcablemap-dl.1.gz"
         bash_completion.install "completions/subcablemap-dl.bash" => "subcablemap-dl"
@@ -22,10 +22,10 @@ class SubcablemapDl < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.2/subcablemap-dl_0.4.2_darwin_arm64.tar.gz"
-      sha256 "146f17d717409ac97f9a0d7e7dc5534ab5027b264735ef6d048465cac2be8c86"
+      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.3/subcablemap-dl_0.4.3_darwin_arm64.tar.gz"
+      sha256 "7ea0c40c22a0fed66f1b4451901822867a3aa0ec9a774661498282907f0af96a"
 
-      def install
+      define_method(:install) do
         bin.install "subcablemap-dl"
         man1.install "manpages/subcablemap-dl.1.gz"
         bash_completion.install "completions/subcablemap-dl.bash" => "subcablemap-dl"
@@ -36,32 +36,26 @@ class SubcablemapDl < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.2/subcablemap-dl_0.4.2_linux_amd64.tar.gz"
-        sha256 "2ab0059e40c2d583f4ea6027039bef6b4e5af3ad49979002e5b94ac2d4f64895"
-
-        def install
-          bin.install "subcablemap-dl"
-          man1.install "manpages/subcablemap-dl.1.gz"
-          bash_completion.install "completions/subcablemap-dl.bash" => "subcablemap-dl"
-          zsh_completion.install "completions/subcablemap-dl.zsh" => "_subcablemap-dl"
-          fish_completion.install "completions/subcablemap-dl.fish"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.3/subcablemap-dl_0.4.3_linux_amd64.tar.gz"
+      sha256 "0d4ce5724b65f63a2ed4277028f5cd0ee2c14cedfea1168ac60379d096993d3c"
+      define_method(:install) do
+        bin.install "subcablemap-dl"
+        man1.install "manpages/subcablemap-dl.1.gz"
+        bash_completion.install "completions/subcablemap-dl.bash" => "subcablemap-dl"
+        zsh_completion.install "completions/subcablemap-dl.zsh" => "_subcablemap-dl"
+        fish_completion.install "completions/subcablemap-dl.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.2/subcablemap-dl_0.4.2_linux_arm64.tar.gz"
-        sha256 "95c69af595c9a39763fa77ceec1ed08750ee86f4f7a47098836a7f95e3d26315"
-
-        def install
-          bin.install "subcablemap-dl"
-          man1.install "manpages/subcablemap-dl.1.gz"
-          bash_completion.install "completions/subcablemap-dl.bash" => "subcablemap-dl"
-          zsh_completion.install "completions/subcablemap-dl.zsh" => "_subcablemap-dl"
-          fish_completion.install "completions/subcablemap-dl.fish"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/subcablemap-dl/releases/download/v0.4.3/subcablemap-dl_0.4.3_linux_arm64.tar.gz"
+      sha256 "61a6c46aa65a005bafe676aede8a0a1a8a9f645b010bc6bd8f0e0bc28dafa236"
+      define_method(:install) do
+        bin.install "subcablemap-dl"
+        man1.install "manpages/subcablemap-dl.1.gz"
+        bash_completion.install "completions/subcablemap-dl.bash" => "subcablemap-dl"
+        zsh_completion.install "completions/subcablemap-dl.zsh" => "_subcablemap-dl"
+        fish_completion.install "completions/subcablemap-dl.fish"
       end
     end
   end
