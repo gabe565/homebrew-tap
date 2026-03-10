@@ -5,15 +5,15 @@
 class PwgenGo < Formula
   desc "Command line passphrase generator written in Go"
   homepage "https://github.com/gabe565/pwgen-go"
-  version "0.8.0"
+  version "0.8.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.0/pwgen-go_0.8.0_darwin_amd64.tar.gz"
-      sha256 "969a2d71200e5f202ac418de6c72d41b6e86b7e5e335616000955aaaa8d49f38"
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.1/pwgen-go_0.8.1_darwin_amd64.tar.gz"
+      sha256 "ac157df3cffdf9b8173c0435f2b4c91146ac93e64dff319fba0794ec083db40a"
 
-      def install
+      define_method(:install) do
         bin.install "pwgen"
         man1.install "manpages/pwgen.1.gz"
         bash_completion.install "completions/pwgen.bash" => "pwgen"
@@ -22,10 +22,10 @@ class PwgenGo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.0/pwgen-go_0.8.0_darwin_arm64.tar.gz"
-      sha256 "e6e10c8dfc1545fd6507775a40984ff03bbf54efb0808aee44b92f481b83bb7a"
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.1/pwgen-go_0.8.1_darwin_arm64.tar.gz"
+      sha256 "b50b85bfce40d79f4cf22ee1295e3209a2d914bfad69382bb3cdd0eed894984e"
 
-      def install
+      define_method(:install) do
         bin.install "pwgen"
         man1.install "manpages/pwgen.1.gz"
         bash_completion.install "completions/pwgen.bash" => "pwgen"
@@ -36,10 +36,10 @@ class PwgenGo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.0/pwgen-go_0.8.0_linux_amd64.tar.gz"
-      sha256 "0a0ef6bd7e694ede452bb9b740f67295c63d7c83ad0bc2c932fb32a43a576071"
-      def install
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.1/pwgen-go_0.8.1_linux_amd64.tar.gz"
+      sha256 "583f3e02df0df9672bab857fcd9e5a93cc14b5bf6951957d0136d6bd028c1df2"
+      define_method(:install) do
         bin.install "pwgen"
         man1.install "manpages/pwgen.1.gz"
         bash_completion.install "completions/pwgen.bash" => "pwgen"
@@ -47,10 +47,10 @@ class PwgenGo < Formula
         fish_completion.install "completions/pwgen.fish"
       end
     end
-    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.0/pwgen-go_0.8.0_linux_arm64.tar.gz"
-      sha256 "b24ac66d271e68f64fcc2e7f26010ac2d376d6e5c44f5809c3642a275cf4a683"
-      def install
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/pwgen-go/releases/download/v0.8.1/pwgen-go_0.8.1_linux_arm64.tar.gz"
+      sha256 "08b0280b83052df5370a0521d376a3d5acf51953ffc23552d9b7c2b301fa4775"
+      define_method(:install) do
         bin.install "pwgen"
         man1.install "manpages/pwgen.1.gz"
         bash_completion.install "completions/pwgen.bash" => "pwgen"
