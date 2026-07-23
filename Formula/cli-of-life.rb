@@ -5,15 +5,15 @@
 class CliOfLife < Formula
   desc "Play Conways Game of Life in your terminal"
   homepage "https://github.com/gabe565/cli-of-life"
-  version "0.4.3"
+  version "0.5.0"
   license "Apache2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.3/cli-of-life_0.4.3_darwin_amd64.tar.gz"
-      sha256 "5678018190e76b3f01163d624d133ee1967edf55b9b53007133a6eedd9930e64"
+      url "https://github.com/gabe565/cli-of-life/releases/download/v0.5.0/cli-of-life_0.5.0_darwin_amd64.tar.gz"
+      sha256 "f6708bc0d89c488b1ee82ef454d9c54533bc2f16a1e5d672774893e5b9d62b3b"
 
-      def install
+      define_method(:install) do
         bin.install "cli-of-life"
         man1.install "manpages/cli-of-life.1.gz"
         bash_completion.install "completions/cli-of-life.bash" => "cli-of-life"
@@ -22,10 +22,10 @@ class CliOfLife < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.3/cli-of-life_0.4.3_darwin_arm64.tar.gz"
-      sha256 "f8ae0369fd3dc41befed9c64ce434ceaa0c81544768e1f901562fbbc27a0f0ad"
+      url "https://github.com/gabe565/cli-of-life/releases/download/v0.5.0/cli-of-life_0.5.0_darwin_arm64.tar.gz"
+      sha256 "c1e5089218ba38f343fe4085bbc1e877e4b5f376a80a6362b32f5e3d5453ffba"
 
-      def install
+      define_method(:install) do
         bin.install "cli-of-life"
         man1.install "manpages/cli-of-life.1.gz"
         bash_completion.install "completions/cli-of-life.bash" => "cli-of-life"
@@ -36,32 +36,26 @@ class CliOfLife < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.3/cli-of-life_0.4.3_linux_amd64.tar.gz"
-        sha256 "0b61829db56dbd457e1eba5a9a670c617c9a9792cde6d13faa75ffc41da6e60c"
-
-        def install
-          bin.install "cli-of-life"
-          man1.install "manpages/cli-of-life.1.gz"
-          bash_completion.install "completions/cli-of-life.bash" => "cli-of-life"
-          zsh_completion.install "completions/cli-of-life.zsh" => "_cli-of-life"
-          fish_completion.install "completions/cli-of-life.fish"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/cli-of-life/releases/download/v0.5.0/cli-of-life_0.5.0_linux_amd64.tar.gz"
+      sha256 "d90286086b68450b8ef078c9351c5cec120fd634012ebe3872f201f93c7eb9e0"
+      define_method(:install) do
+        bin.install "cli-of-life"
+        man1.install "manpages/cli-of-life.1.gz"
+        bash_completion.install "completions/cli-of-life.bash" => "cli-of-life"
+        zsh_completion.install "completions/cli-of-life.zsh" => "_cli-of-life"
+        fish_completion.install "completions/cli-of-life.fish"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/gabe565/cli-of-life/releases/download/v0.4.3/cli-of-life_0.4.3_linux_arm64.tar.gz"
-        sha256 "43a77d7309bd1201d8aac6a8de78436a0c4a54f2de59f796048adb90ad0312e2"
-
-        def install
-          bin.install "cli-of-life"
-          man1.install "manpages/cli-of-life.1.gz"
-          bash_completion.install "completions/cli-of-life.bash" => "cli-of-life"
-          zsh_completion.install "completions/cli-of-life.zsh" => "_cli-of-life"
-          fish_completion.install "completions/cli-of-life.fish"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/gabe565/cli-of-life/releases/download/v0.5.0/cli-of-life_0.5.0_linux_arm64.tar.gz"
+      sha256 "69481f49aeafbcc922a3e3bb3c24a31a17d9f941d9f75bf1c90b67d50e4feaea"
+      define_method(:install) do
+        bin.install "cli-of-life"
+        man1.install "manpages/cli-of-life.1.gz"
+        bash_completion.install "completions/cli-of-life.bash" => "cli-of-life"
+        zsh_completion.install "completions/cli-of-life.zsh" => "_cli-of-life"
+        fish_completion.install "completions/cli-of-life.fish"
       end
     end
   end
